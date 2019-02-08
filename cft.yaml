@@ -81,6 +81,7 @@ Resources:
   EC2Instance:
     Type: AWS::EC2::Instance
     Properties:
+      InstanceInitiatedShutdownBehavior: stop
       BlockDeviceMappings:
       - DeviceName: /dev/sda1
         Ebs:

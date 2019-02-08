@@ -63,3 +63,21 @@ remote machine and edit files.  If your local machine is a mac:
 When done, unmount it before tearing down the stack:
 
     umount istio-go-src
+
+# Stopping to save money
+
+If you shutdown the instance, it will enter the EC2 stopped state but not
+terminate.  While this is happening, you don't have to pay the EC2 instance
+charges but you will still have to pay for the storage and Elastic IP.
+
+    ssh ubuntu@34.201.122.297 "shutdown -h now"
+
+Start back up:
+
+    aws ec2 start-instances --instance-ids `aws cloudformation describe-stacks --stack-name andrew-istio-dev | jq -r '.Stacks[0].Outputs[] | select(.OutputKey=="InstanceId") | .OutputValue'`
+
+# Done
+
+Remember to delete the stack when you're done so you don't accumulate charges:
+
+    aws cloudformation delete-stack --stack-name istio-dev
