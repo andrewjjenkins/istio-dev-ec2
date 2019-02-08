@@ -4,8 +4,8 @@ virtual machine capable of building Istio.
 
 To create the stack:
 
-    git clone https://github.com/andrewjjenkins/create-istio-build
-    cd create-istio-build
+    git clone https://github.com/andrewjjenkins/istio-dev-ec2
+    cd istio-dev-ec2
     STACKNAME=andrew-istio-dev KEYNAME=andrews-ssh-key ./create-istio-build.sh
 
 
