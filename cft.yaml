@@ -102,9 +102,11 @@ Resources:
               runcmd:
                - apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
                - apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-xenial main'
+               - curl https://bazel.build/bazel-release.pub.gpg | sudo apt-key add -
+               - apt-add-repository 'deb http://storage.googleapis.com/bazel-apt stable jdk1.8'
                - apt-get update
                - apt-get dist-upgrade
-               - apt-get install --yes --install-recommends build-essential golang docker-engine git sshfs tree jq direnv cscope exuberant-ctags lnav
+               - apt-get install --yes --install-recommends build-essential golang docker-engine git sshfs tree jq direnv cscope exuberant-ctags lnav libtool cmake clang-format-7 automake autoconf make ninja-build curl unzip virtualenv pkg-config zip g++ zlib1g-dev python openjdk-8-jdk bazel
                - adduser ubuntu docker
                - sudo -u ubuntu mkdir -p /home/ubuntu/go/src/istio.io
                - curl -Lo /usr/local/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/v1.13.2/bin/linux/amd64/kubectl
