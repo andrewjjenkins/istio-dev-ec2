@@ -1,6 +1,6 @@
 Building Istio on your laptop causing your fans to scream?  Pains building on
 Mac or Windows?  This CloudFormation template will quickly spin up an EC2
-virtual machine capable of building Istio.
+virtual machine capable of building Istio and Envoy.
 
 To create the stack:
 
@@ -35,7 +35,7 @@ When done, output like this:
  - Default instance is an m4.2xlarge with 60GB EBS
  - Minikube and docker are installed and running
  - Kubernetes utils like kubectl, kubectx, kubens, stern, helm installed
- - Build toolchain like build-essential, golang, git, jq, tmux installed
+ - Build toolchain like build-essential, golang, git, jq, tmux, clang, bazel installed
 
 # What now?
 
