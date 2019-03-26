@@ -104,7 +104,7 @@ Resources:
                - apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-xenial main'
                - apt-get update
                - apt-get dist-upgrade
-               - apt-get install --yes --install-recommends build-essential golang docker-engine git sshfs tree jq
+               - apt-get install --yes --install-recommends build-essential golang docker-engine git sshfs tree jq direnv cscope exuberant-ctags lnav
                - adduser ubuntu docker
                - sudo -u ubuntu mkdir -p /home/ubuntu/go/src/istio.io
                - curl -Lo /usr/local/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/v1.13.2/bin/linux/amd64/kubectl
