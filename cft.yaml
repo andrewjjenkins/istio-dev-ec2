@@ -104,9 +104,11 @@ Resources:
                - apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-xenial main'
                - curl https://bazel.build/bazel-release.pub.gpg | sudo apt-key add -
                - apt-add-repository 'deb http://storage.googleapis.com/bazel-apt stable jdk1.8'
+               - curl https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
+               - add-apt-repository 'deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-8 main'
                - apt-get update
                - apt-get dist-upgrade
-               - apt-get install --yes --install-recommends build-essential golang docker-engine git sshfs tree jq direnv cscope exuberant-ctags lnav libtool cmake clang-format-7 automake autoconf make ninja-build curl unzip virtualenv pkg-config zip g++ zlib1g-dev python openjdk-8-jdk bazel
+               - apt-get install --yes --install-recommends build-essential golang docker-engine git sshfs tree jq direnv cscope exuberant-ctags lnav libtool cmake clang-format-8 flake8 automake autoconf make ninja-build curl unzip virtualenv pkg-config zip g++ zlib1g-dev python openjdk-8-jdk bazel gdb
                - adduser ubuntu docker
                - sudo -u ubuntu mkdir -p /home/ubuntu/go/src/istio.io
                - curl -Lo /usr/local/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/v1.13.2/bin/linux/amd64/kubectl
